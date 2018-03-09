@@ -39,9 +39,9 @@ namespace Cake.AndroidAvdManager
             var results = new List<FilePath> ();
 
             var ext = environment.Platform.Family == PlatformFamily.Windows ? ".bat" : "";
-            var androidHome = settings.SdkRoot.MakeAbsolute (environment).FullPath;
+            var androidHome = settings.SdkRoot?.MakeAbsolute (environment)?.FullPath;
 
-            if (!System.IO.Directory.Exists (androidHome))
+            if (string.IsNullOrEmpty(androidHome) || !System.IO.Directory.Exists (androidHome))
                 androidHome = environment.GetEnvironmentVariable ("ANDROID_HOME");
 
             if (!string.IsNullOrEmpty (androidHome) && System.IO.Directory.Exists (androidHome)) {
