@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Cake.AndroidAvdManager
 {
-    internal partial class AndroidAvdManagerTool : ToolEx<AndroidAvdManagerToolSettings>
+    internal partial class AndroidAvdManagerTool : Tool<AndroidAvdManagerToolSettings>
     {
         public AndroidAvdManagerTool (ICakeContext cakeContext, IFileSystem fileSystem, ICakeEnvironment cakeEnvironment, IProcessRunner processRunner, IToolLocator toolLocator)
             : base (fileSystem, cakeEnvironment, processRunner, toolLocator)

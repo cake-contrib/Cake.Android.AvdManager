@@ -4,7 +4,7 @@ using Cake.Core.Tooling;
 namespace Cake.AndroidAvdManager
 {
 	/// <summary>
-	/// Android SDK Manager tool settings.
+	/// Android AVD Manager tool settings.
 	/// </summary>
 	public class AndroidAvdManagerToolSettings : ToolSettings
 	{
