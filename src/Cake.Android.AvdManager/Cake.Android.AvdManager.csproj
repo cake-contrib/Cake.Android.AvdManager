@@ -20,17 +20,11 @@
     <LangVersion>7.1</LangVersion>
     <PackageLicenseUrl>https://github.com/redth/Cake.Android.AvdManager</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/redth/Cake.Android.AvdManager</PackageProjectUrl>
+    <PackageIconUrl>https://cdn.rawgit.com/cake-contrib/graphics/a5cf0f881c390650144b2243ae551d5b9f836196/png/cake-contrib-medium.png</PackageIconUrl>
     <IsPackable>True</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Cake.Core" Version="0.33.0" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Remove="Properties\AssemblyInfo.cs" />
-    <Compile Remove="ToolEx.cs" />
+    <PackageReference Include="Cake.Core" Version="0.33.0" PrivateAssets="All" />
   </ItemGroup>
 </Project>
