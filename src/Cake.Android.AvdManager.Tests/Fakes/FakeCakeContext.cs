@@ -4,6 +4,7 @@ using Cake.Core;
 using System.Collections.Generic;
 using Cake.Core.Tooling;
 using Cake.Testing;
+using System.Runtime.InteropServices;
 
 namespace Cake.AndroidAvdManager.Fakes
 {
@@ -19,7 +20,7 @@ namespace Cake.AndroidAvdManager.Fakes
 				System.IO.Path.GetFullPath(AppDomain.CurrentDomain.BaseDirectory));
 			
 			var fileSystem = new FileSystem();
-			var environment = new Cake.Testing.FakeEnvironment(PlatformFamily.OSX);
+			var environment = new Cake.Testing.FakeEnvironment(Platform);
 			var globber = new Globber(fileSystem, environment);
 			log = new FakeCakeLog();
 			var args = new FakeCakeArguments();
@@ -33,6 +34,10 @@ namespace Cake.AndroidAvdManager.Fakes
             context = new CakeContext(fileSystem, environment, globber, log, args, processRunner, registry, toolLocator, dataService, config);
 			context.Environment.WorkingDirectory = testsDir;
 		}
+
+		PlatformFamily Platform
+			=> RuntimeInformation.IsOSPlatform(OSPlatform.Windows)
+				? PlatformFamily.Windows : PlatformFamily.OSX;
 
 		public DirectoryPath WorkingDirectory
 		{
