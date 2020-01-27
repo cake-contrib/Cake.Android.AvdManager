@@ -20,7 +20,7 @@ namespace Cake.AndroidEmulator
         /// <param name="avdName">Android AVD Name.</param>
         /// <param name="settings">Settings.</param>
         [CakeMethodAlias]
-        public static void AndroidEmulatorStart(this ICakeContext context, string avdName, AndroidEmulatorToolSettings settings = null)
+        public static AndroidEmulatorProcess AndroidEmulatorStart(this ICakeContext context, string avdName, AndroidEmulatorToolSettings settings = null)
             => context.GetTool().Run(context, avdName, settings);
 
         /// <summary>
